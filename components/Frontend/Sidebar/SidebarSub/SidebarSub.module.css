@@ -1,0 +1,67 @@
+
+.mainWrapper{
+    /* background-color: #082f7d; */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.headingWrapper{
+    /* background-color: #98a7c4; */
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.headerLeft{
+     /* background-color: #47597c; */
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerRight{
+    /* background-color: #748fc6; */
+    width: 10rem;
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+@keyframes moveX {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px); /* Change this to control the distance */
+    }
+}
+
+.headerRight:hover .headerText{
+
+    /* background-color: #c33535; */
+    animation: moveX 0.2s ease-in-out forwards; 
+}
+
+.itemsWrapper{
+    
+    width: 14rem;
+    height: fit-content;
+    flex-grow: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-wrap: nowrap;
+    display: flex;
+    flex-direction: column; 
+    
+}
+
+
+
+

@@ -1,0 +1,14 @@
+
+.mainWrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    height: 30rem;
+    width: 50%;
+    min-width: 30rem;
+}
+
+.searchBarWrapper{
+    width: 20rem;
+    /* border: 1px solid #000; */
+}

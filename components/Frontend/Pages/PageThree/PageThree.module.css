@@ -1,0 +1,57 @@
+
+.titleSection{
+    /* background-color: #684141; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.titleLeft{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto; 
+    gap: 1rem;
+}
+
+.summaryBadge{
+    width: fit-content;
+    background-color: #f0f2eb;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #eae1e1;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.pageSummaryChips{
+    width: fit-content;
+    height: 2rem;
+    background-color: #f0f2eb;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    border: 1px solid #eae1e1;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.testSection{
+    background-color: #cbbdbd;
+    height: 50rem;
+    width: 30rem;
+}
+
+
+
+
+
+
+
+

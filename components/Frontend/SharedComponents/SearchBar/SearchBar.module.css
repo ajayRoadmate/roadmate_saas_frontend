@@ -1,0 +1,49 @@
+
+.mainWrapper{
+    /* background-color: #62d81e; */
+    width: 100%;
+}
+
+.formElement{
+    width: 100%;
+}
+
+.inputGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* background-color: #b74343; */
+    gap: 1rem;
+}
+
+.searchBarLeft{
+    flex-grow: 1;
+    /* border: 1px solid #000; */
+}
+
+.searchBarRight{
+    width: fit-content;
+    flex-shrink: 1;
+    /* border: 1px solid #000; */
+}
+
+.searchInput{
+    /* background-color: #372e2e; */
+    width: 100%;
+    height: 100%;
+    font-size: 0.75rem;
+}
+
+.searchForm{
+    width: 100%;
+    height: 100%;
+    /* background-color: #b81313; */
+}
+
+.searchBtn{
+    width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
