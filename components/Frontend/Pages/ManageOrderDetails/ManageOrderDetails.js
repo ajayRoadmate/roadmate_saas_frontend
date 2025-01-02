@@ -7,47 +7,52 @@ import Table from './Table/Table';
 // import UpdateOrderDetailModal from './updateOrderDetailModal/updateOrderDetailModal';
 // import DeleteModal from "@/components/Frontend/SharedComponents/DeleteModal/DeleteModal";
 import ManageOrderDetailsLogic from './ManageOrderDetailsLogic';
+import { Suspense } from 'react';
 
 export default function ManageOrderDetails() {
 
   const {pageStates, pageTasks} = ManageOrderDetailsLogic();
 
   return (
-    <div className={`w-100 d-flex flex-column`}>
 
-      {/* title section */}
-      <div className={`d-flex  mt-2`} >
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className={`w-100 d-flex flex-column`}>
 
-        {/* title */}
-        <div className={` page-title`} >Manage Order Details</div>
+        {/* title section */}
+        <div className={`d-flex  mt-2`} >
+
+          {/* title */}
+          <div className={` page-title`} >Manage Order Details</div>
+
+        </div>
+
+        {/* action section */}
+        <div className={`row mt-4`} >
+
+            {/* search bar */}
+            <div className={`col-12 col-md-4 `} >
+              {/* <SearchBar  pageStates={pageStates} pageTasks={pageTasks} /> */}
+            </div>
+
+        </div>
+
+        {/* table section */}
+        <div className={`mt-4 overflow-auto `} >
+          <Table pageStates={pageStates} pageTasks={pageTasks}  />
+        </div>
+
+        {/* add modal */}
+        {/* <AddOrderDetailModal pageStates={pageStates} pageTasks={pageTasks} /> */}
+
+        {/* update modal */}
+        {/* <UpdateOrderDetailModal pageStates={pageStates} pageTasks={pageTasks}/> */}
+        
+        {/* delete modal */}
+        {/* <DeleteModal pageStates={pageStates} pageTasks={pageTasks} /> */}
 
       </div>
-
-      {/* action section */}
-      <div className={`row mt-4`} >
-
-          {/* search bar */}
-          <div className={`col-12 col-md-4 `} >
-            {/* <SearchBar  pageStates={pageStates} pageTasks={pageTasks} /> */}
-          </div>
-
-      </div>
-
-      {/* table section */}
-      <div className={`mt-4 overflow-auto `} >
-        <Table pageStates={pageStates} pageTasks={pageTasks}  />
-      </div>
-
-      {/* add modal */}
-      {/* <AddOrderDetailModal pageStates={pageStates} pageTasks={pageTasks} /> */}
-
-      {/* update modal */}
-      {/* <UpdateOrderDetailModal pageStates={pageStates} pageTasks={pageTasks}/> */}
-      
-      {/* delete modal */}
-      {/* <DeleteModal pageStates={pageStates} pageTasks={pageTasks} /> */}
-
-    </div>
+    </Suspense>
+    
   );
 }
 
