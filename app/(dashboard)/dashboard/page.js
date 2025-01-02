@@ -1,3 +1,3 @@
-import PageOne from "@/components/Frontend/Pages/PageOne/PageOne";
+import ViewProducts from "@/components/Frontend/Pages/ViewProducts/ViewProducts";
 
-export default PageOne;
+export default ViewProducts;
