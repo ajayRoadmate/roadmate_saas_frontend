@@ -1,0 +1,34 @@
+
+.mainWrapper{
+    /* background-color: #d2b5b5 !important; */
+    width: 100%;
+    box-sizing: border-box;
+    /* border: 1px solid #e0e0e0; */
+}
+
+.tableHeadWrapper{
+    background-color: #7c3535 !important;
+    color:#8ded51;
+}
+
+.tableContent{
+    width: 100%;
+    /* background-color: #df1919 !important; */
+    /* overflow: auto; */
+    /* overflow: auto; */
+    min-height: 400px;
+}
+
+.tableFooter{
+    background-color: #8ded51 !important;
+    width: 100%;
+    /* overflow: auto; */
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+.mainWrapper{
+    display: block;
+}
+
+.mainWrapperHidden{
+    display: none;
+}
+
+.inputsWrapper{
+    max-height: 400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 0rem 1rem 0rem 1rem;
+
+}
+
+.formStyle{
+    width: 100%;
+}
