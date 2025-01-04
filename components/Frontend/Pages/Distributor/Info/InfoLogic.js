@@ -17,7 +17,7 @@ export default function InfoLogic(){
 
     async function initialize(){
 
-        var path = Config.URL.apiBaseUrl + 'distributor_info';
+        var path = Config.URL.apiBaseUrl + 'distributor_fetchInfo';
         var params = {};
 
         const userToken = await getUserToken();

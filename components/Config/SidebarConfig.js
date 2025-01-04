@@ -62,7 +62,7 @@ const SidebarConfig = {
         },
         {id: 'subElement_4', name: "Orders", icon: FaCog,isExpand: false, 
             items: [
-                {id:'subElement_4-item_1', name: 'Manage Orders', isActive: false, pathname: '/distributor/viewProducts'}
+                {id:'subElement_4-item_1', name: 'Manage Orders', isActive: false, pathname: '/distributor/manageOrders'}
             ]
         },
         {id: 'subElement_5', name: "Info", icon: FaCog,isExpand: false, 
