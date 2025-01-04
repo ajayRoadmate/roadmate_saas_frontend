@@ -1,7 +1,10 @@
-// import ViewProductDetails from "@/components/Frontend/Pages/ViewProductDetails/ViewProductDetails";
+import { Suspense } from 'react';
+import ViewProductDetails from "@/components/Frontend/Pages/ViewProductDetails/ViewProductDetails";
 
-// export default ViewProductDetails;
-
-import ViewProducts from "@/components/Frontend/Pages/ViewProducts/ViewProducts";
-
-export default ViewProducts;
+export default function page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ViewProductDetails />
+    </Suspense>
+  );
+}

@@ -4,7 +4,7 @@ import LoginLogic from "./LoginLogic"
 
 export default function Login() {
 
-  const {distributorLogin, adminLogin, login, logout, showCookie} =  LoginLogic();
+  const {channelPartnerLogin,distributorLogin, adminLogin, login, logout, showCookie} =  LoginLogic();
 
   return (
     
@@ -12,6 +12,7 @@ export default function Login() {
         <div className={`border p-5`} >
             <div className={`c-btn-primary mt-3`} onClick={adminLogin} >adminLogin</div>
             <div className={`c-btn-primary mt-3`} onClick={distributorLogin} >distributorLogin</div>
+            <div className={`c-btn-primary mt-3`} onClick={channelPartnerLogin} >channelPartnerLogin</div>
             <div className={`c-btn-secondary mt-3`} onClick={showCookie} >showCookie</div>
             <div className={`c-btn-secondary mt-3`} onClick={logout} >Logout</div>
         </div>

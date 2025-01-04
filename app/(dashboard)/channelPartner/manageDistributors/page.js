@@ -1,0 +1,30 @@
+import ManageDistributors from "@/components/Frontend/Pages/ChannelPartner/ManageDistributors/ManageDistributors";
+
+export default ManageDistributors;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

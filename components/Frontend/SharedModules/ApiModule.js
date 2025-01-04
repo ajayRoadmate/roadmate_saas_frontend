@@ -6,14 +6,18 @@ export default function ApiModule(){
     const {openDialogue} = DialogueModule();
 
 
-    function sendPostRequest(endPoint,requestBody){
+    function sendPostRequest(endPoint,requestBody, customHeaders = null){
 
 
         return new Promise((resolve,reject)=>{
 
             var headers = {
                 'Content-Type': 'application/json' 
-            };
+            }
+
+            if(customHeaders){
+                headers = customHeaders;
+            }
             
 
             const requestOptions = {
@@ -66,7 +70,7 @@ export default function ApiModule(){
 
     }
 
-    function sendGetRequest(endPoint,params , customHeaders = null){
+    function sendGetRequest(endPoint, params, customHeaders = null){
 
         return new Promise((resolve,reject)=>{
 
@@ -129,13 +133,20 @@ export default function ApiModule(){
 
     }
 
-    function sendFormData(endPoint, formData) {
+    function sendFormData(endPoint, formData, customHeaders = null) {
 
 
         return new Promise((resolve, reject) => {
+
+            var headers = {};
+            
+            if(customHeaders){
+                headers = customHeaders;
+            }
             
             const requestOptions = {
                 method: 'POST',
+                headers: headers,
                 body: formData
             };
     

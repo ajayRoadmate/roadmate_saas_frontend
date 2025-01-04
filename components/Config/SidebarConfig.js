@@ -45,10 +45,44 @@ const SidebarConfig = {
         ]}
     ],
     DISTRIBUTOR :[
-        {id: 'subElement_1', name: "Shops", icon: FaCog,isExpand: false, items: [
-            {id:'subElement_1-item_1', name: 'Manage Shops', isActive: false, pathname: '/distributor/manageShops'}
-        ]}
-    ]   
+        {id: 'subElement_1', name: "Shops", icon: FaCog,isExpand: false, 
+            items: [
+                {id:'subElement_1-item_1', name: 'Manage Shops', isActive: false, pathname: '/distributor/manageShops'}
+            ]
+        },
+        {id: 'subElement_2', name: "Executives", icon: FaCog,isExpand: false, 
+            items: [
+                {id:'subElement_2-item_1', name: 'Manage Executives', isActive: false, pathname: '/distributor/manageExecutives'}
+            ]
+        },
+        {id: 'subElement_3', name: "Products", icon: FaCog,isExpand: false, 
+            items: [
+                {id:'subElement_3-item_1', name: 'Manage Products', isActive: false, pathname: '/distributor/viewProducts'}
+            ]
+        },
+        {id: 'subElement_4', name: "Orders", icon: FaCog,isExpand: false, 
+            items: [
+                {id:'subElement_4-item_1', name: 'Manage Orders', isActive: false, pathname: '/distributor/viewProducts'}
+            ]
+        },
+        {id: 'subElement_5', name: "Info", icon: FaCog,isExpand: false, 
+            items: [
+                {id:'subElement_5-item_1', name: 'Info', isActive: false, pathname: '/distributor/info'}
+            ]
+        }
+    ],
+    CHANNEL_PARTNER:[
+        {id: 'subElement_1', name: "Distributors", icon: FaCog,isExpand: false, 
+            items: [
+                {id:'subElement_1-item_1', name: 'Manage Distributors', isActive: false, pathname: '/channelPartner/manageDistributors'}
+            ]
+        },
+        {id: 'subElement_2', name: "Info", icon: FaCog,isExpand: false, 
+            items: [
+                {id:'subElement_2-item_1', name: 'View Info', isActive: false, pathname: '/channelPartner/info'}
+            ]
+        }
+    ]  
 
 }
 

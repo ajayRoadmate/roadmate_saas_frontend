@@ -70,6 +70,35 @@ export default function LoginLogic(){
         .catch(alert);
     }
 
+    function channelPartnerLogin(){
+
+        var endpoint = baseUrl+'testChannelPartnerLogin';
+
+        var payload = {
+            email:"testemail",
+            password:"testPassord"
+        };
+
+        apiTasks.sendPostRequest(endpoint,payload)
+        .then((response)=>{
+
+            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: response.payload.userToken}, 10);
+
+            if(isSetCookie){
+
+                alert("Cookie is set");
+                window.location.replace('/channelPartner/manageDistributors');
+            }
+            else{
+                alert("cookie not set");
+            }
+    
+
+        })
+        .catch(alert);
+
+    }
+
     function adminLogin(){
 
         var endpoint = baseUrl+'testAdminLogin';
@@ -117,7 +146,7 @@ export default function LoginLogic(){
     }
 
     
-    return {distributorLogin, adminLogin, login,showCookie, logout}
+    return {channelPartnerLogin, distributorLogin, adminLogin, login,showCookie, logout}
 
 
 }

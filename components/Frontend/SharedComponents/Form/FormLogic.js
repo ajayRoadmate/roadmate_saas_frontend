@@ -1,5 +1,6 @@
 import Config from "@/components/Config/Config";
 import ApiModule from "../../SharedModules/ApiModule";
+import FrontendCookies from "../../SharedModules/FrontendCookies";
 
 
 export default function FormLogic(fromStates, formTasks){
@@ -70,10 +71,22 @@ export default function FormLogic(fromStates, formTasks){
 
     }
 
-    function sendDataToServer(endPoint,formData){
+    async function sendDataToServer(endPoint,formData){
 
-        apiTasks.sendFormData(endPoint,formData)
+        const userToken = await getUserToken();
+        var headers = {};
+
+        if(userToken){
+            var headers = {
+                'user-token': userToken
+            };
+        }
+
+        apiTasks.sendFormData(endPoint,formData,headers)
         .then((response)=>{
+
+            console.log("FormLogic");
+            console.log(response);
 
             alert(response.message);
             formTasks.setFormStatus("submitSuccess");
@@ -141,6 +154,34 @@ export default function FormLogic(fromStates, formTasks){
         }  
             
     }
+
+    async function  getUserToken(){ 
+    
+        try {
+
+            const TOKEN_ISSUER = 'roadMate';
+            const {frontendCookiesTasks} = FrontendCookies();
+            const userCookie = frontendCookiesTasks.getCookie('userCookie');
+
+            if(userCookie){
+
+                const userToken  = userCookie.userToken;
+                return userToken;
+    
+            }
+            else{
+
+                return false;
+            }
+    
+        } 
+        catch (error) {
+
+            return false;
+        }
+    
+    }
+
 
     return {
         states: {isFormActive,isFormLoading},

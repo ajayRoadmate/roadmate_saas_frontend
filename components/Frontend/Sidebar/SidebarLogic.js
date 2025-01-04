@@ -75,6 +75,10 @@ export default function SidebarLogic(){
     
                     sidebarSubElements = getInitialSubElements(SidebarConfig.DISTRIBUTOR);
                 }
+                else if(userType == Config.USER_TYPES.channelPartner){
+    
+                    sidebarSubElements = getInitialSubElements(SidebarConfig.CHANNEL_PARTNER);
+                }
             }
 
             setSidebarState((currentState)=>{

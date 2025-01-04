@@ -29,7 +29,7 @@ export default function ManageExecutivesLogic(){
 
     var tableOptions = { 
         id: 'executivesTable',
-        endPoint: 'admin_fetchExecutiveTableData',
+        endPoint: 'distributor_fetchExecutiveTableData',
         columnList: columnList,
         filterInfo: {
             filterIsActive: true,

@@ -5,7 +5,8 @@ const Config = {
     USER_TYPES:{
         admin : 1,
         bdm : 2,
-        distributor: 3
+        distributor: 3,
+        channelPartner:4
     },
 
     ACCESS_PAGES:{
@@ -14,7 +15,8 @@ const Config = {
     },
 
     URL:{
-        apiBaseUrl: "http://159.89.160.73/api/admin/"
+        apiBaseUrl: "http://localhost/roadmate_saas_backend/public/api/admin/",
+        // apiBaseUrl: "http://159.89.160.73/api/admin/"
     }
     
 }

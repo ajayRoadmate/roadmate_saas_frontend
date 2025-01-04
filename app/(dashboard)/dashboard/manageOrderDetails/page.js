@@ -1,7 +1,11 @@
-// import ManageOrderDetails from "@/components/Frontend/Pages/ManageOrderDetails/ManageOrderDetails";
+import { Suspense } from 'react';
+import ManageOrderDetails from "@/components/Frontend/Pages/ManageOrderDetails/ManageOrderDetails";
 
-// export default ManageOrderDetails;
 
-import ManageDistributors from "@/components/Frontend/Pages/ManageDistributors/ManageDistributors";
-
-export default ManageDistributors;
+export default function page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ManageOrderDetails />
+    </Suspense>
+  );
+}
