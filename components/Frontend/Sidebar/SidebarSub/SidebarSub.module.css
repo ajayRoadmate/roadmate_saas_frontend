@@ -15,7 +15,7 @@
 }
 
 .headerLeft{
-     /* background-color: #47597c; */
+    /* background-color: #4d5d7d; */
     height: 3rem;
     width: 3rem;
     display: flex;
@@ -24,8 +24,8 @@
 }
 
 .headerRight{
-    /* background-color: #748fc6; */
-    width: 10rem;
+    /* background-color: #121212; */
+    width: 15rem ;
     text-wrap: nowrap;
     display: flex;
     align-items: center;
@@ -50,8 +50,8 @@
 }
 
 .itemsWrapper{
-    
-    width: 14rem;
+    background-color: #faf2cc;
+    width: 19rem ;
     height: fit-content;
     flex-grow: 1;
     overflow: hidden;

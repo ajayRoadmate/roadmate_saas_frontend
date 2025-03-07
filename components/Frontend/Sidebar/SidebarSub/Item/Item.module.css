@@ -34,10 +34,10 @@
 
 
 .rightSection{
-
+    /* background-color: #d9dc6d; */
     color: #000;
     height: 3rem;
-    width: 11rem;
+    width: 18.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;

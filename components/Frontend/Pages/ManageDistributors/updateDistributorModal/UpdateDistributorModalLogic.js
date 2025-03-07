@@ -45,8 +45,9 @@ export default function UpdateDistributorModalLogic(updateModalStates, updateMod
 
             var itemKey = updateModalStates.ModalState.updateItem.itemKey;
             var itemValue = updateModalStates.ModalState.updateItem.itemValue;
+            var endpoint = 'fetchDistributorsUpdateFormData';
 
-            var updateFormData = await updateModalTasks.getUpdateFormData(itemKey,itemValue);
+            var updateFormData = await updateModalTasks.getUpdateFormData(itemKey, itemValue, endpoint);
 
             var countrySelectOptions = {selectInputName: 'country_id', endpoint: 'fetchCountryFilterData'};
             await formTasks.initializeSelect(countrySelectOptions);

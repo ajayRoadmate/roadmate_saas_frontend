@@ -7,10 +7,7 @@ import SidebarSubLogic from './SidebarSubLogic';
 
 export default function SidebarSub({data}) {
 
-
   const {selectSubSection, sidebarState, setSidebarState} = SidebarSubLogic(data);
-
-
 
   return (
     <div className={`${styles.mainWrapper} `}  >
@@ -25,7 +22,7 @@ export default function SidebarSub({data}) {
 
         {/* header right section */}
         <motion.div 
-            animate={{ width: (sidebarState.isOpen || sidebarState.lockIsActive)? '10rem' : '0rem' }} 
+            animate={{ width: (sidebarState.isOpen || sidebarState.lockIsActive)? '15rem' : '0rem' }} 
             transition={{duration: 0.3}}
             className={`${styles.headerRight} `}
             initial={false}
@@ -49,7 +46,7 @@ export default function SidebarSub({data}) {
       <motion.div 
         className={`${styles.itemsWrapper} `} 
         animate={{ 
-          width: ( data.isExpand & (sidebarState.isOpen || sidebarState.lockIsActive))? '14rem' : '0rem',
+          width: ( data.isExpand & (sidebarState.isOpen || sidebarState.lockIsActive))? '19rem' : '0rem',
           height: ( data.isExpand & (sidebarState.isOpen || sidebarState.lockIsActive))? 'auto' : '0rem',
           opacity: ( data.isExpand & (sidebarState.isOpen || sidebarState.lockIsActive))? 1 : 0
         }}

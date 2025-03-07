@@ -82,7 +82,7 @@ export default function UpdateModalModule(){
             var params = {item_key: itemKey, item_value: itemValue};
             var apiBaseUrl = Config.URL.apiBaseUrl;
             var path = apiBaseUrl + endpoint;
-    
+
             apiTasks.sendGetRequest(path,params)
             .then((response)=>{
 
@@ -90,10 +90,6 @@ export default function UpdateModalModule(){
             })
             .catch((message)=>{
 
-                console.log("UpdateModalModule catch");
-                console.log(message);
-
-    
                 reject(message);
             })
 

@@ -27,7 +27,7 @@ export default function Sidebar() {
 
           {/* header right section */}
           <motion.div  
-              animate={{ width: (sidebarState.isOpen || sidebarState.lockIsActive)? '10rem' : '0rem' }} 
+              animate={{ width: (sidebarState.isOpen || sidebarState.lockIsActive)? '15rem' : '0rem' }} 
               transition={{duration: 0.3}}
               className={`${styles.headerRight} `}
               initial={false} 

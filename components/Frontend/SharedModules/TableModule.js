@@ -31,6 +31,7 @@ export default function TableModule({ TableStateAtom }) {
             };
         }
 
+
         apiTasks.sendGetRequest(path, params, headers)
         .then((response)=>{
             fetchInitialTableData_onSuccess(response,tableOptions);

@@ -97,6 +97,8 @@ export default function UpdateFormLogic(fromStates, formTasks, updateItem){
             formTasks.setFormStatus("loaded");
             alert(message);
         });
+
+        
     }
 
     function closeForm(event){
