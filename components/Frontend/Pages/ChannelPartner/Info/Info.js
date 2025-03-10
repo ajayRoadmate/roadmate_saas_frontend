@@ -21,19 +21,19 @@ export default function AddProduct() {
       <div className={`mt-2`} >
         <div className={`d-flex  w-50`} >
             <div className={` p-3 fw-bold`} >Name:</div>
-            <div className={`w-auto  ms-3 p-3`} >{(Info.channel_partner_name)?Info.channel_partner_name:"Na"}</div>
+            <div className={`w-auto  ms-3 p-3`} >{(Info.channel_partner_name)?Info.channel_partner_name:""}</div>
         </div>
         <div className={`d-flex  w-50`} >
             <div className={` p-3 fw-bold`} >Email:</div>
-            <div className={`w-auto  ms-3 p-3`} >{(Info.email)?Info.email:"Na"}</div>
+            <div className={`w-auto  ms-3 p-3`} >{(Info.email)?Info.email:""}</div>
         </div>
         <div className={`d-flex  w-50`} >
             <div className={` p-3 fw-bold`} >Phone:</div>
-            <div className={`w-auto  ms-3 p-3`} >{(Info.phone)?Info.phone:"Na"}</div>
+            <div className={`w-auto  ms-3 p-3`} >{(Info.phone)?Info.phone:""}</div>
         </div>
         <div className={`d-flex  w-50`} >
             <div className={` p-3 fw-bold`} >Address:</div>
-            <div className={`w-auto  ms-3 p-3`} >{(Info.address)?Info.address:"Na"}</div>
+            <div className={`w-auto  ms-3 p-3`} >{(Info.address)?Info.address:""}</div>
         </div>
       </div>
 
