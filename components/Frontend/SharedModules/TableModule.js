@@ -31,7 +31,6 @@ export default function TableModule({ TableStateAtom }) {
             };
         }
 
-
         apiTasks.sendGetRequest(path, params, headers)
         .then((response)=>{
             fetchInitialTableData_onSuccess(response,tableOptions);
@@ -41,6 +40,7 @@ export default function TableModule({ TableStateAtom }) {
     }
 
     function fetchInitialTableData_onSuccess(response, tableOptions){
+
 
         const newTableState = getPaginatedTableState(response.payload, tableOptions); 
 

@@ -59,7 +59,6 @@ export default function ViewProductsLogic(){
     }
     
 
-
     return {
         pageStates:{
             tableStates, tableOptions, addModalStates, updateModalStates, deleteModalStates
