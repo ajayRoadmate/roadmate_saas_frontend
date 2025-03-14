@@ -1,5 +1,4 @@
 
-
 const Config = {
 
     USER_TYPES:{
@@ -10,8 +9,10 @@ const Config = {
     },
 
     ACCESS_PAGES:{
-        admin : ['/dashboard/pageOne','/dashboard/pageTwo','/dashboard/pageThree','/dashboard/pageFour'],
-        bdm : ['/dashboard/pageThree']
+        admin : ['/dashboard/manageDistributors','/dashboard/manageExecutives','/dashboard/manageChannelPartners','/dashboard/manageSubscriptions','/dashboard/manageShops','/dashboard/manageOrders','/dashboard/manageOrderDetails','/dashboard/viewProducts','/dashboard/viewProductDetails','/dashboard/addProduct','/dashboard/updateProduct'],
+        bdm : ['/dashboard/pageThree'],
+        distributor : ['/distributor/manageShops','/distributor/manageExecutives','/distributor/viewProducts','/distributor/viewProductDetails','/distributor/addProduct','/distributor/updateProduct','/distributor/manageOrders','/distributor/manageOrderDetails','/distributor/info'],
+        channelPartner: ['/channelPartner/manageDistributors', '/channelPartner/info']
     },
 
     URL:{

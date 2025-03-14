@@ -1,20 +1,67 @@
 'use client'
 
 import LoginLogic from "./LoginLogic"
+import styles from './Login.module.css';
 
 export default function Login() {
 
-  const {channelPartnerLogin,distributorLogin, adminLogin, login, logout, showCookie} =  LoginLogic();
+  const {pageTasks, pageState} =  LoginLogic();
 
   return (
     
     <div className={`h-100 d-flex align-items-center justify-content-center`}>
         <div className={`border p-5`} >
-            <div className={`c-btn-primary mt-3`} onClick={adminLogin} >adminLogin</div>
-            <div className={`c-btn-primary mt-3`} onClick={distributorLogin} >distributorLogin</div>
-            <div className={`c-btn-primary mt-3`} onClick={channelPartnerLogin} >channelPartnerLogin</div>
-            <div className={`c-btn-secondary mt-3`} onClick={showCookie} >showCookie</div>
-            <div className={`c-btn-secondary mt-3`} onClick={logout} >Logout</div>
+
+          <form id={'loginForm'} className={`${styles.formStyle} `}>
+
+            {/* Phone */}
+            <div  className={`${styles.subWrapper} pt-0 pb-3`} >
+                <div className={`row g-0`} >
+                    <div className={`col`} >
+                        <input 
+                            name={'phone'} 
+                            id={'phone'} 
+                            type={'text'} 
+                            className={`${styles.input} form-control`}
+                            placeholder={'Phone Number'} 
+                            required
+                        >
+                        </input>
+                        <div className={` invalid-feedback`} >{'invalid feedback'}</div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Password */}
+            <div  className={`${styles.subWrapper} pt-0 pb-3`} >
+                <div className={`row g-0`} >
+                    <div className={`col`} >
+                        <input 
+                            name={'password'} 
+                            id={'password'} 
+                            type={'text'} 
+                            className={`${styles.input} form-control`} 
+                            placeholder={'Password'} 
+                            required
+                        >
+                        </input>
+                        <div className={` invalid-feedback`} >{'invalid feedback'}</div>
+                    </div>
+                </div>
+            </div> 
+
+            {/* submit button */}
+            <div className={` d-flex w-100  justify-content-center align-items-center`} >
+              <button type="submit" className="c-btn-primary me-3 " onClick={pageTasks.login}  >
+                  <div>Login</div>
+                  {/* {(pageStates.FormState.status == "submitted")&&
+                      <span className="spinner-grow spinner-grow-sm ms-1" role="status" aria-hidden="true"></span>
+                  } */}
+              </button>
+            </div>                   
+
+          </form>
+
         </div>
     </div>
     

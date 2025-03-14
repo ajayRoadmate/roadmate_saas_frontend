@@ -12,7 +12,7 @@ export default function FormLogic(fromStates, formTasks){
 
     const formLoadingStatus = ["loading","initial"];
     const isFormLoading = fromStates.FormState && formLoadingStatus.includes(fromStates.FormState.status);
-
+ 
 
     function onSubmit(event){
 
@@ -84,9 +84,6 @@ export default function FormLogic(fromStates, formTasks){
 
         apiTasks.sendFormData(endPoint,formData,headers)
         .then((response)=>{
-
-            console.log("FormLogic");
-            console.log(response);
 
             alert(response.message);
             formTasks.setFormStatus("submitSuccess");

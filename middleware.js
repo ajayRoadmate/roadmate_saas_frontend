@@ -6,41 +6,43 @@ import Config from './components/Config/Config';
 
 export async function middleware(request) {
 
+    
 
     var isStaticFileRequest = check_isStaticFileRequest();
     var isLoginPath = check_isLoginPath();
 
-    // if(!isStaticFileRequest && !isLoginPath){
 
-    //     var userToken = getUserToken(); 
+    if(!isStaticFileRequest && !isLoginPath){
 
-    //     if(userToken){
+        var userToken = getUserToken(); 
 
-    //         var userInfo = await getUserInfo(userToken);
+        if(userToken){
 
-    //         if(userInfo){
+            var userInfo = await getUserInfo(userToken);
 
-    //             var isUserAuthorized = check_isUserAuthorized(userInfo);
+            if(userInfo){
 
-    //             if(isUserAuthorized){
+                var isUserAuthorized = check_isUserAuthorized(userInfo);
 
-    //                 return NextResponse.next();
-    //             }
-    //             else{
-    //                 return NextResponse.rewrite(new URL('/404', request.url));
-    //             }
+                if(isUserAuthorized){
 
-    //         }
-    //         else{
+                    return NextResponse.next();
+                }
+                else{
+                    return NextResponse.rewrite(new URL('/404', request.url));
+                }
 
-    //             return NextResponse.redirect(new URL('/login', request.url));
-    //         }
-    //     }
-    //     else{
+            }
+            else{
 
-    //         return NextResponse.redirect(new URL('/login', request.url));        
-    //     }
-    // }
+                return NextResponse.redirect(new URL('/login', request.url));
+            }
+        }
+        else{
+
+            return NextResponse.redirect(new URL('/login', request.url));        
+        }
+    }
 
     function check_isStaticFileRequest(){
 
@@ -93,7 +95,7 @@ export async function middleware(request) {
 
     async function  getUserInfo(userToken){ 
 
-        const SECRET_KEY = 'testSecret'; 
+        const SECRET_KEY = '3nRbfdxiiGx9zV0EZBUjd4VgQ7YK0bEsYWYq2Fv1gdU'; 
         const TOKEN_ISSUER = 'roadMate';
 
         try {
@@ -148,11 +150,43 @@ export async function middleware(request) {
             }
 
         }
+        else if(userInfo.userType == Config.USER_TYPES.distributor){
+
+            if (Config.ACCESS_PAGES.distributor.includes(requestedPath)) {
+
+                return true; 
+
+            } else {
+
+                return false; 
+            }
+
+        }
+        else if(userInfo.userType == Config.USER_TYPES.channelPartner){
+
+            if (Config.ACCESS_PAGES.channelPartner.includes(requestedPath)) {
+
+                return true; 
+
+            } else {
+
+                return false; 
+            }
+
+        }
         else{
 
             return false; 
         }
         
+    }
+
+    function testMsg(message){
+
+        return new Response(message, {
+            status: 200,
+            headers: { 'Content-Type': 'text/plain' },
+        });
     }
     
     

@@ -10,13 +10,16 @@ export default function AddDistributorModalLogic(addModalStates, addModalTasks, 
         status: 'loading',
         id:'addFormId',
         submitButtonValue: 'Add',
-        submitEndpoint: 'testFormSubmit', 
+        submitEndpoint: 'admin_createDistributor', 
         inputs: [
             {name: 'distributor_name', id: 'distributor_name', label: 'Distributor Name', type: 'text', pattern: '^.{5,50}$', isRequired: true, invalidFeedback: 'Required, 5-50 characters long.'},
             {name: 'address', id: 'address', label: 'Address', type: 'text', pattern: '^.{5,50}$', isRequired: true, invalidFeedback: 'Required, 5-50 characters long.'},
             {name: 'phone', id: 'phone', label: 'Phone', type: 'tel', isRequired: true, invalidFeedback: 'Required, Phone number must be valid.'},
             {name: 'email', id: 'email', label: 'Email', type: 'email', isRequired: true, invalidFeedback: 'Required, Must be a valid email.'},
             {name: 'password', id: 'password', label: 'Password', type: 'text', isRequired: true, invalidFeedback: 'Required'},
+            {name: 'channel_partner_id', id: 'channel_partner_id', label: 'Channel Partner', type: 'select',  isRequired: true, invalidFeedback: 'Required', value: "inital",  isActive: false,
+                options:[]
+            },
             {name: 'country_id', id: 'country_id', label: 'Country', type: 'select',  isRequired: true, invalidFeedback: 'Required', value: "inital",  isActive: false, onChange:onChangeCountrySelect,
                 options:[]
             },
@@ -41,6 +44,9 @@ export default function AddDistributorModalLogic(addModalStates, addModalTasks, 
         try{
 
             formTasks.setInitialState(INITIAL_FORM_STATE);
+
+            var channelPartnerSeclectOptions = {selectInputName: 'channel_partner_id', endpoint: 'fetchChannelPartnerFilterData'};
+            await formTasks.initializeSelect(channelPartnerSeclectOptions);
 
             var countrySelectOptions = {selectInputName: 'country_id', endpoint: 'fetchCountryFilterData'};
             await formTasks.initializeSelect(countrySelectOptions);

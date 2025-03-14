@@ -17,6 +17,9 @@ export default function UpdateDistributorModalLogic(updateModalStates, updateMod
             {name: 'phone', id: 'phone', label: 'Phone', type: 'tel', isRequired: true, invalidFeedback: 'Required, Phone number must be valid.'},
             {name: 'email', id: 'email', label: 'Email', type: 'email', isRequired: true, invalidFeedback: 'Required, Must be a valid email.'},
             {name: 'password', id: 'password', label: 'Password', type: 'text', isRequired: true, invalidFeedback: 'Required'},
+            {name: 'channel_partner_id', id: 'channel_partner_id', label: 'Channel Partner', type: 'select',  isRequired: true, invalidFeedback: 'Required', value: "inital",  isActive: false,
+                options:[]
+            },
             {name: 'country_id', id: 'country_id', label: 'Country', type: 'select',  isRequired: true, invalidFeedback: 'Required', value: "inital",  isActive: false, onChange:onChangeCountrySelect,
                 options:[]
             },
@@ -49,6 +52,9 @@ export default function UpdateDistributorModalLogic(updateModalStates, updateMod
 
             var updateFormData = await updateModalTasks.getUpdateFormData(itemKey, itemValue, endpoint);
 
+            var channelPartnerSeclectOptions = {selectInputName: 'channel_partner_id', endpoint: 'fetchChannelPartnerFilterData'};
+            await formTasks.initializeSelect(channelPartnerSeclectOptions);
+            
             var countrySelectOptions = {selectInputName: 'country_id', endpoint: 'fetchCountryFilterData'};
             await formTasks.initializeSelect(countrySelectOptions);
 

@@ -2,7 +2,7 @@ import Config from "@/components/Config/Config";
 import ApiModule from "../../SharedModules/ApiModule";
 import FrontendCookies from "../../SharedModules/FrontendCookies";
 import { useRouter } from 'next/navigation';
-
+import { decodeJwt } from 'jose';
 
 export default function LoginLogic(){
 
@@ -10,144 +10,110 @@ export default function LoginLogic(){
     const {apiTasks} = ApiModule();
     const router = useRouter();
 
+    function login(event){
+
+        event.preventDefault();
+
+        var form = document.getElementById('loginForm');
+        var formData = new FormData(form);
+
+        var apiBaseUrl = Config.URL.apiBaseUrl;
+        var endPoint = apiBaseUrl + 'Login';
+
+        var isFormValid = form.checkValidity();
+        form.classList.add('was-validated');
+
+        if (isFormValid){
+
+            apiTasks.sendFormData(endPoint,formData)
+            .then((response)=>{
+
+                var userType = getUserType(response.user_token);
+                onLoginSuccess(userType, response.user_token);
+
+            })
+            .catch((message)=>{
     
-    var baseUrl = Config.URL.apiBaseUrl;
+                alert(message);
+            });
 
+        }
+        else{
 
-    function login(){
+            alert('Form is not valid');
+        }
 
-        var endpoint = baseUrl+'testAdminLogin';
+    }
 
-        var payload = {
-            email:"testemail",
-            password:"testPassord"
-        };
+    function onLoginSuccess(userType, userToken){
 
-        apiTasks.sendPostRequest(endpoint,payload)
-        .then((response)=>{
+        if(userType == 1){
 
-            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: response.payload.userToken}, 10);
+            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: userToken}, 10);
 
             if(isSetCookie){
 
-                alert("Cookie is set");
-                window.location.replace('/dashboard/pageThree');
+                window.location.replace('/dashboard/manageDistributors');
+
             }
             else{
-                alert("cookie not set");
+                alert("Login failed,cookie not set");
             }
-    
 
-        })
-        .catch(alert);
-    }
+        }
+        else if(userType == 2){
 
-    function distributorLogin(){
+            alert("Login disabled for this user.");
 
-        var endpoint = baseUrl+'testDistributorLogin';
+        }
+        else if(userType == 3){
 
-        var payload = {
-            email:"testemail",
-            password:"testPassord"
-        };
-
-        apiTasks.sendPostRequest(endpoint,payload)
-        .then((response)=>{
-
-            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: response.payload.userToken}, 10);
+            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: userToken}, 10);
 
             if(isSetCookie){
 
-                alert("Cookie is set");
-                window.location.replace('/distributor/manageShops');
+                window.location.replace('/distributor/info');
+
             }
             else{
-                alert("cookie not set");
+                alert("Login failed,cookie not set");
             }
-    
 
-        })
-        .catch(alert);
-    }
+        }
+        else if(userType == 4){
 
-    function channelPartnerLogin(){
-
-        var endpoint = baseUrl+'testChannelPartnerLogin';
-
-        var payload = {
-            email:"testemail",
-            password:"testPassord"
-        };
-
-        apiTasks.sendPostRequest(endpoint,payload)
-        .then((response)=>{
-
-            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: response.payload.userToken}, 10);
+            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: userToken}, 10);
 
             if(isSetCookie){
 
-                alert("Cookie is set");
-                window.location.replace('/channelPartner/manageDistributors');
+                window.location.replace('channelPartner/info');
+
             }
             else{
-                alert("cookie not set");
+                alert("Login failed,cookie not set");
             }
-    
+        }
+        else{
 
-        })
-        .catch(alert);
-
-    }
-
-    function adminLogin(){
-
-        var endpoint = baseUrl+'testAdminLogin';
-
-        var payload = {
-            email:"testemail",
-            password:"testPassord"
-        };
-
-        apiTasks.sendPostRequest(endpoint,payload)
-        .then((response)=>{
-
-            const isSetCookie = frontendCookiesTasks.setCookie("userCookie", {userToken: response.payload.userToken}, 10);
-
-            if(isSetCookie){
-
-                alert("Cookie is set");
-                window.location.replace('/dashboard/manageShops');
-            }
-            else{
-                alert("cookie not set");
-            }
-    
-
-        })
-        .catch(alert);
-    }
-
-    function showCookie(){
-
-        const cookie = frontendCookiesTasks.getCookie('userCookie');
-
-
-        console.log("hello cookie");
-        console.log(cookie);
+            alert("Failed to login user.");
+        }
 
     }
 
-    function logout(){
+    function getUserType(userToken){
 
-        frontendCookiesTasks.clearCookie('userCookie');
-
-        history.replaceState(null, '', window.location.href);
-        router.push('/login');
+        const userInfo = decodeJwt(userToken);
+        return userInfo.userType;
     }
+
 
     
-    return {channelPartnerLogin, distributorLogin, adminLogin, login,showCookie, logout}
-
+    return {
+        pageTasks:{
+            login:login
+        },
+        pageState:{}
+    }
 
 }
 
