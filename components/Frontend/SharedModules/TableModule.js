@@ -35,7 +35,17 @@ export default function TableModule({ TableStateAtom }) {
         .then((response)=>{
             fetchInitialTableData_onSuccess(response,tableOptions);
         })
-        .catch(apiTasks.request_onFailure);
+        .catch(fetchInitialTableData_onFailure);
+
+    }
+
+    function fetchInitialTableData_onFailure(message){
+
+        setTableState((currentState)=>{
+            return {...currentState, status: 'inActive'};
+        });
+
+        alert(message);
 
     }
 
