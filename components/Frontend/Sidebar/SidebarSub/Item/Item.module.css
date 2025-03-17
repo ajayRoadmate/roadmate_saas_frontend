@@ -1,5 +1,5 @@
 
-
+/* change */
 .item{
     /* background-color: #f6fad9; */
     width: 100%;
@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: row;
 }
-
+/* change */
 .itemActive{
     background-color: #faf2cc;
     width: 100%;
@@ -21,6 +21,7 @@
     background-color: #d8be11;
 }
 
+/* change */
 .leftSection{
     /* background-color: #30e02d; */
     height: 3rem;
@@ -32,12 +33,12 @@
 }
 
 
-
+/* change bg height*/
 .rightSection{
     /* background-color: #d9dc6d; */
     color: #000;
     height: 3rem;
-    width: 18.5rem;
+    width: 16.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;

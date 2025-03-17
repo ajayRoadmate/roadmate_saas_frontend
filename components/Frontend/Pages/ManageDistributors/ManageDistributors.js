@@ -19,7 +19,7 @@ export default function ManageDistributors() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Manage Distributors</div>
+        <div className={` page-title`} >Distributors</div>
 
         {/* Add section */}
         <div className={`d-none d-md-flex  align-items-center ms-auto`} >

@@ -21,7 +21,7 @@ export default function ManageOrderDetails() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Manage Order Details</div>
+        <div className={` page-title`} >Order Details</div>
 
       </div>
 

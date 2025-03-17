@@ -8,6 +8,8 @@ import SidebarLogic from './SidebarLogic';
 import { FaLock } from 'react-icons/fa';
 import { motion } from "framer-motion"
 import { FaCog } from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
+
 
 export default function Sidebar() {
 
@@ -22,12 +24,12 @@ export default function Sidebar() {
 
           {/* header left section */}
           <div className={`${styles.headerLeft} `} >
-            <FaCog />
+            <FaHome />
           </div>
 
           {/* header right section */}
           <motion.div  
-              animate={{ width: (sidebarState.isOpen || sidebarState.lockIsActive)? '15rem' : '0rem' }} 
+              animate={{ width: (sidebarState.isOpen || sidebarState.lockIsActive)? '13rem' : '0rem' }} 
               transition={{duration: 0.3}}
               className={`${styles.headerRight} `}
               initial={false} 

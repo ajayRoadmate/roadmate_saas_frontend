@@ -19,7 +19,7 @@ export default function ManageProducts() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Manage Products</div>
+        <div className={` page-title`} >Products</div>
 
         {/* Add section */}
         <div className={`d-none d-md-flex  align-items-center ms-auto`} >

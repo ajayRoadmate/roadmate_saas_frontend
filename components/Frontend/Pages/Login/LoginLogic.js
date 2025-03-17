@@ -72,7 +72,7 @@ export default function LoginLogic(){
 
             if(isSetCookie){
 
-                window.location.replace('/distributor/info');
+                window.location.replace('/distributor/manageShops');
 
             }
             else{
@@ -86,7 +86,7 @@ export default function LoginLogic(){
 
             if(isSetCookie){
 
-                window.location.replace('channelPartner/info');
+                window.location.replace('/channelPartner/manageDistributors');
 
             }
             else{

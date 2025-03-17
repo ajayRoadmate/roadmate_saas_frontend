@@ -14,7 +14,7 @@ export default function AddProduct() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Distributor Info</div>
+        <div className={` page-title`} >Distributor Information</div>
         
       </div>
 

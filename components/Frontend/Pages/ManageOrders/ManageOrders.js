@@ -20,7 +20,7 @@ export default function ManageOrders() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Manage Orders</div>
+        <div className={` page-title`} >Orders</div>
 
         {/* Add section */}
         {/* <div className={`d-none d-md-flex  align-items-center ms-auto`} >

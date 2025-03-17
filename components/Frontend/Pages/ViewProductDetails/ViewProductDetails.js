@@ -19,7 +19,7 @@ export default function ViewProductDetails() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >View ProductDetails</div>
+        <div className={` page-title`} >Product Details</div>
 
       </div>
 

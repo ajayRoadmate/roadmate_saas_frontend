@@ -9,9 +9,9 @@ const Config = {
     },
 
     ACCESS_PAGES:{
-        admin : ['/dashboard/manageDistributors','/dashboard/manageExecutives','/dashboard/manageChannelPartners','/dashboard/manageSubscriptions','/dashboard/manageShops','/dashboard/manageOrders','/dashboard/manageOrderDetails','/dashboard/viewProducts','/dashboard/viewProductDetails','/dashboard/addProduct','/dashboard/updateProduct'],
+        admin : ['/dashboard/manageDistributors','/dashboard/manageExecutives','/dashboard/manageChannelPartners','/dashboard/manageSubscriptions','/dashboard/manageShops','/dashboard/manageOrders','/dashboard/manageOrderDetails','/dashboard/viewProducts','/dashboard/viewProductDetails','/dashboard/addProduct','/dashboard/updateProduct','/dashboard/adminHome'],
         bdm : ['/dashboard/pageThree'],
-        distributor : ['/distributor/manageShops','/distributor/manageExecutives','/distributor/viewProducts','/distributor/viewProductDetails','/distributor/addProduct','/distributor/updateProduct','/distributor/manageOrders','/distributor/manageOrderDetails','/distributor/info'],
+        distributor : ['/distributor/manageShops','/distributor/manageExecutives','/distributor/viewProducts','/distributor/viewProductDetails','/distributor/addProduct','/distributor/updateProduct','/distributor/manageOrders','/distributor/manageOrderDetails','/distributor/info','/distributor/manageBrands'],
         channelPartner: ['/channelPartner/manageDistributors', '/channelPartner/info']
     },
 

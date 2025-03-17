@@ -30,7 +30,7 @@ export default function UpdateProduct() {
               <div className={`border col pt-4 pb-5 ps-4 pe-4`} >
                 <div className={`${styles.inputsWrapper} `} >
 
-                  <div  className={`${styles.subWrapper} pt-0 pb-3 h5 fw-bold`} >Product Section</div>
+                  <div  className={`${styles.subWrapper} pt-0 pb-3 h5 fw-bold`} >Product</div>
 
                   {/* product_name */}
                   <div  className={`${styles.subWrapper} pt-0 pb-3`} >

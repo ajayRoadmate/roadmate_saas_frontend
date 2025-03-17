@@ -18,7 +18,7 @@ export default function ManageShops() {
       {/* title section */}
       <div className={`d-flex  mt-2`} >
         {/* title */}
-        <div className={` page-title`} >Distributor Shops</div>
+        <div className={` page-title`} >Shops</div>
       </div>
 
       {/* action section */}

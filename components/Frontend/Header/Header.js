@@ -24,7 +24,7 @@ export default function Header() {
       {/* right section */}
       <div className={`${styles.rightSection} ms-auto`}>
         <div className={`c-btn-secondary`} onClick={sharedTasks.logout} >Logout</div>
-        <div className={`${styles.notificationWrapper} `} >
+        {/* <div className={`${styles.notificationWrapper} `} >
           <FaRegBell />
         </div>
         <div className={`ms-3 fw-bold user-select-none`}>
@@ -37,7 +37,7 @@ export default function Header() {
           <div className={`${styles.accountIconWrapper} `} >
             <FaCaretDown />
           </div>
-        </div>
+        </div> */}
       </div>
 
     </div>

@@ -19,7 +19,7 @@ export default function ManageSubscriptions() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Manage Subscriptions</div>
+        <div className={` page-title`} >Subscriptions</div>
 
         {/* Add section */}
         <div className={`d-none d-md-flex  align-items-center ms-auto`} >

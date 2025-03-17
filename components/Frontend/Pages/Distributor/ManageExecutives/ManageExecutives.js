@@ -19,7 +19,7 @@ export default function ManageExecutives() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Distributor Manage Executives</div>
+        <div className={` page-title`} >Executives</div>
 
         {/* Add section */}
         <div className={`d-none d-md-flex  align-items-center ms-auto`} >
