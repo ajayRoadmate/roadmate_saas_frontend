@@ -14,13 +14,21 @@ export default function TableLogic(TableState, tableOptions,tableTasks){
     function initializeTable(tableOptions){
 
         var path = Config.URL.apiBaseUrl + tableOptions.endPoint;
-        var params = {page: 1, rows_count: 10, filter_column:"", filter_state:"", search: "", order_id: tableOptions.orderId};
+        var params = {page: 1, rows_count: 10, filter_column:"", filter_state:"", search: "", order_id: tableOptions.itemValue};
+
 
         apiTasks.sendGetRequest(path, params)
         .then((response)=>{
             fetchInitialTableData_onSuccess(response,tableOptions);
         })
-        .catch(apiTasks.request_onFailure);
+        .catch((message)=>{
+
+            alert(message);
+            
+            tableTasks.setTableState((currentState)=>{
+                return {...currentState, status: 'inActive'};
+            });
+        });
 
     }
 

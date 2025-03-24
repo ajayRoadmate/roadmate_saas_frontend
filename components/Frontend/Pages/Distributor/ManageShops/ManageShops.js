@@ -4,7 +4,7 @@ import { FiPlus } from 'react-icons/fi';
 import Table from "@/components/Frontend/SharedComponents/Table/Table";
 import SearchBar from "@/components/Frontend/SharedComponents/SearchBar/SearchBar";
 // import AddShopModal from "./AddShopModal/AddShopModal";
-// import UpdateShopModal from './updateShopModal/updateShopModal';
+import UpdateShopModal from './UpdateShopModal/UpdateShopModal';
 // import DeleteModal from "@/components/Frontend/SharedComponents/DeleteModal/DeleteModal";
 import ManageShopsLogic from "./ManageShopsLogic";
 
@@ -35,6 +35,9 @@ export default function ManageShops() {
       <div className={`mt-4 overflow-auto `} >
         <Table pageStates={pageStates} pageTasks={pageTasks}  />
       </div>
+
+      {/* update modal */}
+      <UpdateShopModal pageStates={pageStates} pageTasks={pageTasks}/>
 
     </div>
   );

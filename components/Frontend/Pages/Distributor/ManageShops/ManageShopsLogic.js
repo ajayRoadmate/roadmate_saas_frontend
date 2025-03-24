@@ -14,9 +14,16 @@ export default function ManageShopssLogic(){
 
     var columnList = [
         {type:'text', name:'shop_id'},
+        {type:'text', name:'executive_name'},
+        {type:'text', name:'executive_phone'},
         {type:'text', name:'shop_name'},
         {type:'text', name:'address'},
-        {type:'text', name:'phone_primary'}
+        {type:'text', name:'phone_primary'},
+        {type: 'actions', name: 'actions', 
+            actions:[
+                {method: action_update, name:'Update'}
+            ]
+        }
     ];
 
     var tableOptions = { 
@@ -29,6 +36,12 @@ export default function ManageShopssLogic(){
             filterState:''
         },
         rowsCount: 10
+    }
+
+    function action_update(item){
+
+        var updateItem = {itemKey: "shops.id", itemValue: item.shop_id.value};
+        updateModalTasks.openModal(updateItem);
     }
 
     return {

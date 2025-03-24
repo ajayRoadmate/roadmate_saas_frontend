@@ -1,7 +1,10 @@
 
 import styles from './TextCell.module.css'
+import TextCellLogic from './TextCellLogic'
 
 export default function TextCell({data}) {
+
+  const {getText} = TextCellLogic();
 
   return (
 
@@ -9,7 +12,7 @@ export default function TextCell({data}) {
 
         <td className={`${styles.text} `}>
             {
-                data
+              getText(data)
             }
         </td> 
 

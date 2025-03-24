@@ -1,13 +1,11 @@
-'use client';
-
-import { FiPlus } from 'react-icons/fi';
+"use client"
 import Table from './Table/Table';
 // import SearchBar from "@/components/Frontend/SharedComponents/SearchBar/SearchBar";
 // import AddOrderDetailModal from "./AddOrderDetailModal/AddOrderDetailModal";
 // import UpdateOrderDetailModal from './updateOrderDetailModal/updateOrderDetailModal';
 // import DeleteModal from "@/components/Frontend/SharedComponents/DeleteModal/DeleteModal";
 import ManageOrderDetailsLogic from './ManageOrderDetailsLogic';
-import { Suspense } from 'react';
+import CancelModal from './CancelModal/CancelModal';
 
 export default function ManageOrderDetails() {
 
@@ -21,7 +19,7 @@ export default function ManageOrderDetails() {
       <div className={`d-flex  mt-2`} >
 
         {/* title */}
-        <div className={` page-title`} >Order Details</div>
+        <div className={` page-title`} >Order Details </div>
 
       </div>
 
@@ -39,6 +37,9 @@ export default function ManageOrderDetails() {
       <div className={`mt-4 overflow-auto `} >
         <Table pageStates={pageStates} pageTasks={pageTasks}  />
       </div>
+
+      {/* CancelModal */}
+      <CancelModal pageStates={pageStates} pageTasks={pageTasks} />
 
       {/* add modal */}
       {/* <AddOrderDetailModal pageStates={pageStates} pageTasks={pageTasks} /> */}

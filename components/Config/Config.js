@@ -16,8 +16,8 @@ const Config = {
     },
 
     URL:{
-        // apiBaseUrl: "http://localhost/roadmate_saas_backend/public/api/admin/",
-        apiBaseUrl: "http://159.89.160.73/api/admin/"
+        apiBaseUrl: "http://localhost/roadmate_saas_backend/public/api/admin/",
+        // apiBaseUrl: "http://159.89.160.73/api/admin/"
     }
     
 }
