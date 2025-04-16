@@ -55,7 +55,7 @@ export default function Login() {
               <button type="submit" className="c-btn-primary me-3 " onClick={pageTasks.login}  >
                   <div>Test</div>
                   {/* {(pageStates.FormState.status == "submitted")&&
-                      <span className="spinner-grow spinner-grow-sm ms-1" role="status" aria-hidden="true"></span>
+                      <span classNamgit e="spinner-grow spinner-grow-sm ms-1" role="status" aria-hidden="true"></span>
                   } */}
               </button>
             </div>                   
